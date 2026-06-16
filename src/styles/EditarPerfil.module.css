@@ -1,0 +1,332 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px - 100px);
+    background-color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.formCard {
+    background: #d9d9d9;
+    border-radius: 20px;
+    padding: 40px 50px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    font-family: 'Lato', sans-serif;
+    border-left: 5px solid #d70000;
+    padding-left: 15px;
+}
+
+.form { display: flex; flex-direction: column; gap: 20px; }
+
+.formGroup { display: flex; flex-direction: column; gap: 8px; }
+
+.formGroup label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #d70000;
+    box-shadow: 0 0 0 3px rgba(215, 0, 0, 0.1);
+}
+
+/* Divisor "Alterar senha" */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #888;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.saveBtn {
+    background-color: #d70000;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.saveBtn:hover { background-color: #c1121f; }
+.saveBtn:disabled { background-color: #ccc; cursor: not-allowed; }
+
+.backLink {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.backLink:hover { color: #d70000; }
+
+.errorMessage {
+    background-color: #ffe0e0;
+    color: #e63946;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.successMessage {
+    background-color: #e0ffe0;
+    color: #28a745;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 480px) {
+    .formCard {
+        padding: 28px 20px;
+        border-radius: 12px;
+    }
+    .title { font-size: 22px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px - 100px);
+    background-color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.formCard {
+    background: #d9d9d9;
+    border-radius: 20px;
+    padding: 40px 50px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    font-family: 'Lato', sans-serif;
+    border-left: 5px solid #d70000;
+    padding-left: 15px;
+}
+
+.form { display: flex; flex-direction: column; gap: 20px; }
+
+.formGroup { display: flex; flex-direction: column; gap: 8px; }
+
+.formGroup label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #d70000;
+    box-shadow: 0 0 0 3px rgba(215, 0, 0, 0.1);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #888;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.saveBtn {
+    background-color: #d70000;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.saveBtn:hover { background-color: #c1121f; }
+.saveBtn:disabled { background-color: #ccc; cursor: not-allowed; }
+
+.backLink {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.backLink:hover { color: #d70000; }
+
+/* ===== TOAST ===== */
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    animation: slideDown 0.3s ease;
+}
+
+.toastErro {
+    background-color: #ffe0e0;
+    color: #c1121f;
+    border-left: 4px solid #d70000;
+}
+
+.toastSucesso {
+    background-color: #e0ffe0;
+    color: #1a7a1a;
+    border-left: 4px solid #28a745;
+}
+
+.toastIcone {
+    font-size: 18px;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== DICAS DE SENHA ===== */
+.senhaDicas {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+    padding: 10px 14px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.dicaPendente {
+    font-size: 13px;
+    color: #999;
+    font-family: 'Lato', sans-serif;
+    transition: color 0.3s;
+}
+
+.dicaOk {
+    font-size: 13px;
+    color: #28a745;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    transition: color 0.3s;
+}
+
+@media (max-width: 480px) {
+    .formCard {
+        padding: 28px 20px;
+        border-radius: 12px;
+    }
+    .title { font-size: 22px; }
+}

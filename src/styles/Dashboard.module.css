@@ -1,0 +1,444 @@
+﻿.dashboardContainer {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-areas:
+        "sidebar titulo1"
+        "sidebar titulo2"
+        "sidebar restante";
+    min-height: calc(100vh - 80px - 100px);
+    font-family: 'Lato', sans-serif;
+    background-color: #f8f9fc;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #D70000;
+    color: white;
+    padding: 30px 0;
+}
+
+.dashboardContainer h1:first-of-type {
+    grid-area: titulo1;
+    margin: 0 0 10px 0;
+    padding: 0 40px;
+    align-self: end;
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.sectionTitle {
+    grid-area: titulo2;
+    margin: 30px 0 20px 0;
+    padding: 0 40px;
+    align-self: start;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+    border-left: 5px solid #ff0000;
+    padding-left: 15px;
+    margin-left: 25px;
+}
+
+.dashboardContainer > :not(h1):not(h2):not(.sidebar) {
+    grid-area: restante;
+    padding: 0 40px;
+}
+
+.sidebar nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar nav li { margin-bottom: 8px; }
+.sidebar nav a {
+    display: block;
+    padding: 12px 24px;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.sidebar nav a:hover {
+    background-color: rgba(255,255,255,0.15);
+    border-left-color: white;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
+.cardHeader h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #000000;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.cardEmail {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.cardMeta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.badgeAdmin { background-color: #fff3cd; color: #856404; }
+.badgeGarcom { background-color: #d1ecf1; color: #0c5460; }
+.badgeAtivo { background-color: #d4edda; color: #155724; }
+.badgeBloqueado { background-color: #f8d7da; color: #842029; }
+
+.btnDesbloquear {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btnDesbloquear:hover { background-color: #218838; }
+.btnDesbloquear:disabled { background-color: #ccc; cursor: not-allowed; }
+
+.loadingText { color: #888; font-size: 15px; font-family: 'Lato', sans-serif; }
+.errorText { color: #e63946; font-size: 15px; font-family: 'Lato', sans-serif; }
+
+
+
+
+
+
+
+
+.btnEditarPerfil {
+    background-color: transparent;
+    border: 1px solid #d70000;
+    color: #d70000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.btnEditarPerfil:hover {
+    background-color: #d70000;
+    color: white;
+}
+
+
+
+
+
+
+.mesasGarcom {
+    grid-area: restante;
+    padding: 20px 40px;
+}
+
+.mesasTitulo {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-left: 5px solid #d70000;
+    padding-left: 12px;
+}
+
+.mesasGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 16px;
+}
+
+.mesaCard {
+    padding: 20px 16px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.mesaCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.mesaLivre {
+    background: #dcfce7;
+    border-color: #16a34a;
+}
+
+.mesaOcupada {
+    background: #fee2e2;
+    border-color: #dc2626;
+}
+
+.mesaNumero {
+    font-size: 16px;
+    color: #111;
+}
+
+.mesaStatusLabel {
+    font-size: 12px;
+    color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cardAcoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.btnEditar {
+    flex: 1;
+    background-color: #ffc107;
+    color: #5c4404;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btnEditar:hover { background-color: #e0a800; }
+
+.btnExcluir {
+    flex: 1;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btnExcluir:hover { background-color: #c82333; }
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modalTitle {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.modalContent .formGroup {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modalContent .formGroup label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.modalContent .formGroup input,
+.modalContent .formGroup select {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+}
+
+.modalActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btnCancelar {
+    flex: 1;
+    background-color: #e9ecef;
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+}
+
+.btnCancelar:hover { background-color: #dee2e6; }
+
+.btnSalvarModal {
+    flex: 1;
+    background-color: #d70000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+}
+
+.btnSalvarModal:hover { background-color: #b50000; }
+.btnSalvarModal:disabled,
+.btnCancelar:disabled { opacity: 0.6; cursor: not-allowed; }
+
+
+
+
+
+
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .dashboardContainer {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "titulo1"
+            "sidebar"
+            "titulo2"
+            "restante";
+    }
+
+    .sidebar {
+        padding: 12px 0;
+        overflow-x: auto; /* ✅ habilita scroll horizontal */
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        flex-wrap: nowrap; /* ✅ não quebra linha */
+        gap: 8px;
+        padding: 0 16px;
+        width: max-content; /* ✅ deixa a lista crescer além da tela */
+    }
+
+    .sidebar nav li { margin-bottom: 0; }
+
+    .sidebar nav a {
+        padding: 8px 16px;
+        font-size: 11px;
+        border-left: none;
+        border-radius: 20px; /* ✅ formato pílula */
+        background-color: rgba(255, 255, 255, 0.2);
+        white-space: nowrap; /* ✅ texto não quebra */
+    }
+
+    .sidebar nav a:hover {
+        background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .dashboardContainer h1:first-of-type {
+        padding: 20px 20px 0;
+        font-size: 22px;
+    }
+
+    .sectionTitle {
+        margin-left: 0;
+        padding: 0 20px 0 15px;
+        font-size: 18px;
+    }
+
+    .dashboardContainer > :not(h1):not(h2):not(.sidebar) {
+        padding: 0 16px;
+    }
+
+    .cardsGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card:hover { transform: none; }
+}

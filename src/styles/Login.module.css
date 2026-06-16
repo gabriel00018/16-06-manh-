@@ -1,0 +1,111 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px - 100px);
+    background-color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.loginCard {
+    background: #d9d9d9;
+    border-radius: 16px;
+    padding: 48px 52px;
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.loginTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Lato', sans-serif;
+}
+
+.formGroup {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    font-family: 'Lato', sans-serif;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #e63946;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+}
+
+.formGroup input::placeholder {
+    color: #bbb;
+    font-weight: 400;
+}
+
+.loginBtn {
+    width: 100%;
+    background-color: #D70000;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.loginBtn:hover { background-color: #c1121f; }
+
+.forgotLink {
+    display: block;
+    margin-top: 24px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgotLink:hover { color: #e63946; }
+
+.errorMessage {
+    background-color: #ffe0e0;
+    color: #e63946;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 480px) {
+    .loginCard {
+        padding: 32px 24px;
+        border-radius: 12px;
+    }
+    .loginTitle { font-size: 22px; margin-bottom: 28px; }
+}

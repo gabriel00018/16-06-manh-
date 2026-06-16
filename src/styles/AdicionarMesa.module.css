@@ -1,0 +1,446 @@
+.pageContainer {
+    min-height: calc(100vh - 80px - 100px);
+    background-color: #f8f9fc;
+    padding: 40px;
+    font-family: 'Lato', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    border-left: 5px solid #d70000;
+    padding-left: 16px;
+    margin: 0;
+}
+
+.btnVoltar {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btnVoltar:hover { background: #eee; border-color: #aaa; }
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 620px;
+    margin-bottom: 24px;
+}
+
+.cardTitulo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 4px;
+}
+
+.cardSubtitulo {
+    font-size: 13px;
+    color: #999;
+    margin: 0 0 20px;
+}
+
+.formRow {
+    display: flex;
+    gap: 12px;
+}
+
+.select {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.select:focus {
+    outline: none;
+    border-color: #d70000;
+    box-shadow: 0 0 0 2px rgba(215,0,0,0.1);
+}
+
+.btnAdicionar {
+    background-color: #d70000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.btnAdicionar:hover:not(:disabled) { background-color: #b00000; }
+.btnAdicionar:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.limiteTexto {
+    font-size: 14px;
+    color: #b00000;
+    font-weight: 600;
+}
+
+.mesasGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.mesaCard {
+    background: #f8f9fc;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #eee;
+    transition: box-shadow 0.2s;
+}
+
+.mesaCard:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+.mesaNumero {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.mesaStatus {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.statusDisponivel { background: #e0ffe0; color: #1a7a1a; }
+.statusOcupada { background: #ffe0e0; color: #c1121f; }
+
+.btnExcluirMesa {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.btnExcluirMesa:hover { background: #ffe0e0; border-color: #dc3545; }
+
+.emptyText { color: #999; font-size: 14px; }
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    animation: slideDown 0.3s ease;
+    max-width: 620px;
+    font-family: 'Lato', sans-serif;
+}
+
+.toastErro { background-color: #ffe0e0; color: #c1121f; border-left: 4px solid #d70000; }
+.toastSucesso { background-color: #e0ffe0; color: #1a7a1a; border-left: 4px solid #28a745; }
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 28px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: scaleIn 0.2s ease;
+}
+
+.modalIcone { font-size: 40px; margin-bottom: 12px; }
+.modalTitulo { font-size: 20px; font-weight: 700; color: #000; margin: 0 0 8px; font-family: 'Lato', sans-serif; }
+.modalTexto { font-size: 14px; color: #888; margin: 0 0 24px; font-family: 'Lato', sans-serif; }
+
+.modalBotoes { display: flex; gap: 12px; }
+
+.modalBtnCancelar {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #666;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modalBtnCancelar:hover { background: #f0f0f0; }
+
+.modalBtnConfirmar {
+    flex: 1;
+    background: #d70000;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modalBtnConfirmar:hover { background: #b00000; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* Modal de itens da mesa */
+.modalItensMesa {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: scaleIn 0.2s ease;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modalItensHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btnFecharModal {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.btnFecharModal:hover { background: #f0f0f0; }
+
+.listaItens {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.itemRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fc;
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: 1px solid #eee;
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.itemNome {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+.itemQtd {
+    font-size: 12px;
+    color: #888;
+}
+
+.itemDireita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.itemPreco {
+    font-size: 14px;
+    font-weight: 700;
+    color: #d70000;
+}
+
+.btnExcluirItem {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.btnExcluirItem:hover { background: #ffe0e0; border-color: #dc3545; }
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.totalValor {
+    color: #d70000;
+    font-size: 18px;
+}
+
+.btnPagar {
+    width: 100%;
+    background: #1a7a1a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnPagar:hover { background: #155715; }
+
+.mesaCardOcupada:hover {
+    box-shadow: 0 4px 16px rgba(215,0,0,0.15);
+    border-color: #d70000;
+}
+
+
+/* Adicione isso no seu AdicionarMesa.module.css */
+.modalOverlayTop {
+    z-index: 1100; /* valor maior que o z-index do .modalOverlay normal */
+}
+
+.modalOverlayTop {
+    z-index: 1100;
+}
+
+
+.itemObs {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+
+
+
+.botoesModal {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btnPagarParcial {
+    flex: 1;
+    padding: 12px;
+    background: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnCancelarParcial {
+    flex: 1;
+    padding: 12px;
+    background: #e5e7eb;
+    color: #374151;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.itemSelecionado {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+}
+
+.checkboxItem {
+    margin-right: 8px;
+    accent-color: #f59e0b;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .pageContainer { padding: 20px 16px; }
+    .title { font-size: 24px; }
+    .formRow { flex-direction: column; }
+    .mesasGrid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,120 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px - 100px);
+    background-color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.recoveryCard {
+    background: #d9d9d9;
+    border-radius: 16px;
+    padding: 48px 52px;
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Lato', sans-serif;
+}
+
+.formGroup {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    font-family: 'Lato', sans-serif;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #d70000;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+}
+
+.formGroup input::placeholder { color: #bbb; font-weight: 400; }
+
+.sendBtn {
+    width: 100%;
+    background-color: #ea0000;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.sendBtn:hover { background-color: #d70000; }
+.sendBtn:disabled { background-color: #ccc; cursor: not-allowed; }
+
+.successMessage {
+    background-color: #e0ffe0;
+    color: #28a745;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.errorMessage {
+    background-color: #ffe0e0;
+    color: #d70000;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.backLink {
+    display: block;
+    margin-top: 24px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.backLink:hover { color: #d70000; }
+
+@media (max-width: 480px) {
+    .recoveryCard {
+        padding: 32px 24px;
+        border-radius: 12px;
+    }
+    .title { font-size: 22px; margin-bottom: 28px; }
+}
